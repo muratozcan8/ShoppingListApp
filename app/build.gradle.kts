@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -19,6 +20,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -29,11 +34,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "1.8"
     }
 }
 
@@ -48,7 +53,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-
+    implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
     implementation("androidx.activity:activity-ktx:1.6.1")
 
     //Dagger/Hilt
@@ -65,4 +70,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
     kapt("androidx.lifecycle:lifecycle-compiler:2.1.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
+
+    //Kodein
+    implementation("org.kodein.di:kodein-di-generic-jvm:6.4.0")
+    implementation("org.kodein.di:kodein-di-framework-android-x:6.4.0")
+
+
 }
