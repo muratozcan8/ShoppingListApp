@@ -1,9 +1,10 @@
-package com.muratozcan.shoppinglistapp
+package com.muratozcan.shoppinglistapp.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.muratozcan.shoppinglistapp.data.db.entities.ShoppingItem
 
 @Database(
     entities = [ShoppingItem::class],

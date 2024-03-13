@@ -1,4 +1,4 @@
-package com.muratozcan.shoppinglistapp
+package com.muratozcan.shoppinglistapp.data.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

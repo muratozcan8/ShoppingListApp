@@ -48,14 +48,21 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel:2.5.1")
+
     implementation("androidx.activity:activity-ktx:1.6.1")
 
+    //Dagger/Hilt
     implementation("com.google.dagger:hilt-android:2.46")
     kapt("com.google.dagger:hilt-android-compiler:2.46")
 
+    //Room
     implementation("androidx.room:room-runtime:2.5.0-beta02")
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.4.3")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+
+    //ViewModel
+    implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
+    kapt("androidx.lifecycle:lifecycle-compiler:2.1.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
 }
